@@ -1,22 +1,148 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta charset='UTF-8'>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+	<meta http-equiv='X-UA-Compatible' content='ie=edge'>
 	<title>TypeScript Web Component</title>
+	<style>
+
+      t-input{
+					display: block;
+					margin-bottom: 40px;
+			}
+	</style>
 </head>
 <body>
-<hello-world id="hello"></hello-world>
-<script src="./dist/bundle.js"></script>
+<t-input
+	id='inputSwitch1'
+	default-lang='it'
+	btn-position='top|right'></t-input>
+<t-input
+	id='inputSwitch2'
+	default-lang='en'
+	btn-position='top|left'></t-input>
+<t-input
+	id='inputSwitch3'
+	default-lang='it'
+	btn-position='bottom|left'></t-input>
+<t-input
+	id='inputSwitch4'
+	default-lang='en'
+	btn-position='bottom|right'></t-input>
+<t-input
+	id='inputSwitch5'
+	default-lang='it'
+	btn-position='left|outset'></t-input>
+<t-input
+	id='inputSwitch6'
+	default-lang='en'
+	btn-position='right|outset'></t-input>
+<t-input
+	id='inputSwitch7'
+	default-lang='it'
+	btn-position='left|inset'></t-input>
+<t-input
+	id='inputSwitch8'
+	default-lang='en'
+	btn-position='right|inset'></t-input>
+<script src='./dist/bundle.js'></script>
 <script>
-	let hello = document.getElementById('hello');
-	hello.addEventListener('ready', () => {
-		hello.prop = 'test';
+	let inputEl1 = document.getElementById('inputSwitch1');
+	let inputEl2 = document.getElementById('inputSwitch2');
+	let inputEl3 = document.getElementById('inputSwitch3');
+	let inputEl4 = document.getElementById('inputSwitch4');
+	let inputEl5 = document.getElementById('inputSwitch5');
+	let inputEl6 = document.getElementById('inputSwitch6');
+	let inputEl7 = document.getElementById('inputSwitch7');
+	let inputEl8 = document.getElementById('inputSwitch8');
 
-		setTimeout(() => {
-			hello.prop = 'test1';
-		}, 1000)
+	inputEl1.addEventListener('ready', () => {
+		inputEl1.model = {
+			'it': 'it value',
+			'en': 'en value',
+			'de': 'de value',
+		};
+	});
+	inputEl1.addEventListener('input', (value) => {
+		console.log('input', value);
+	});
+
+	inputEl2.addEventListener('ready', () => {
+		inputEl2.model = {
+			'it': 'it value',
+			'en': 'en value',
+			'de': 'de value',
+		};
+	});
+	inputEl2.addEventListener('input', (value) => {
+		console.log('input', value);
+	});
+
+	inputEl3.addEventListener('ready', () => {
+		inputEl3.model = {
+			'it': 'it value',
+			'en': 'en value',
+			'de': 'de value',
+		};
+	});
+	inputEl3.addEventListener('input', (value) => {
+		console.log('input', value);
+	});
+
+	inputEl4.addEventListener('ready', () => {
+		inputEl4.model = {
+			'it': 'it value',
+			'en': 'en value',
+			'de': 'de value',
+		};
+	});
+	inputEl4.addEventListener('input', (value) => {
+		console.log('input', value);
+	});
+
+	inputEl5.addEventListener('ready', () => {
+		inputEl5.model = {
+			'it': 'it value',
+			'en': 'en value',
+			'de': 'de value',
+		};
+	});
+	inputEl5.addEventListener('input', (value) => {
+		console.log('input', value);
+	});
+
+	inputEl6.addEventListener('ready', () => {
+		inputEl6.model = {
+			'it': 'it value',
+			'en': 'en value',
+			'de': 'de value',
+		};
+	});
+	inputEl6.addEventListener('input', (value) => {
+		console.log('input', value);
+	});
+
+	inputEl7.addEventListener('ready', () => {
+		inputEl7.model = {
+			'it': 'it value',
+			'en': 'en value',
+			'de': 'de value',
+		};
+	});
+	inputEl7.addEventListener('input', (value) => {
+		console.log('input', value);
+	});
+
+	inputEl8.addEventListener('ready', () => {
+		inputEl8.model = {
+			'it': 'it value',
+			'en': 'en value',
+			'de': 'de value',
+		};
+	});
+	inputEl8.addEventListener('input', (value) => {
+		console.log('input', value);
 	});
 </script>
 </body>

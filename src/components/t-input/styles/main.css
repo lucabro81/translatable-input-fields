@@ -1,0 +1,59 @@
+@import "./../../../styles.css";
+@import "./_variables.css";
+@import "./_modifiers.css";
+
+.container {
+    display: flex;
+    position: relative;
+    width: fit-content;
+    min-width: var(--container--min-width);
+    color: var(--container--text-color);
+    background-color: var(--container--bg-color);
+    margin: var(--container--margin);
+    padding: var(--container--padding);
+    align-items: center;
+}
+
+.container__input-part {
+    display: flex;
+    width: 100%;
+}
+
+.container__action-part {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-part__field {
+    display: flex;
+    flex: 1;
+    border: var(--input-field--border);
+    border-radius: var(--input-field--border-radius);
+    padding: var(--input-field--padding);
+}
+
+.input-part__field > input {
+    flex: 1;
+}
+
+.action-part__lang-cont {
+    white-space: nowrap;
+}
+
+.lang-cont__btn {
+    border: var(--lang-btn--border);
+    border-radius: var(--lang-btn--border-radius);
+    background: var(--lang-btn--background);
+    width: var(--lang-btn--width);
+    padding: var(--lang-btn--padding);
+    text-transform: var(--lang-btn--text-transform);
+}
+
+.lang-cont__btn:not(:first-child) {
+    margin: var(--lang-btn--margin);
+}
+
+.btn__icon {
+    width: 12px;
+    height: 12px;
+}

@@ -1,0 +1,29 @@
+:host {
+    --container--text-color: #000000;
+    --container--bg-color: transparent;
+    --container--margin: 0 0 0 0;
+    --container--padding: 0 0 0 0;
+    --container--min-width: 500px;
+
+    /*--------------------------------------*/
+
+    --input-field--border: 1px #a2a2a2 solid;
+    --input-field--border-radius: 4px;
+    --input-field--padding: 8px 12px;
+
+    /*--------------------------------------*/
+
+    --lang-btn--border: 1px #a2a2a2 solid;
+    --lang-btn--border-radius: 2px;
+    --lang-btn--background: #e3e3e3;
+    --lang-btn--width: 40px;
+    --lang-btn--padding: 2px 0;
+    --lang-btn--text-transform: uppercase;
+    --lang-btn--margin: 4px 0 4px 4px;
+
+    --lang-btn--selected--background: #727272;
+    --lang-btn--selected--color: #e3e3e3;
+
+    --lang-btn-group--spacer--left: 4px;
+    --lang-btn-group--spacer--right: 4px;
+}
