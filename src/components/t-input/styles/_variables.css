@@ -19,7 +19,9 @@
     --lang-btn--width: 40px;
     --lang-btn--padding: 2px 0;
     --lang-btn--text-transform: uppercase;
-    --lang-btn--margin: 4px 0 4px 4px;
+    --lang-btn--margin: 4px 4px 4px 0;
+
+    --lang-btn-hdn-selector--margin: 4px 0px 4px 0;
 
     --lang-btn--selected--background: #727272;
     --lang-btn--selected--color: #e3e3e3;

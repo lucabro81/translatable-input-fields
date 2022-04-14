@@ -38,6 +38,22 @@
 
 .action-part__lang-cont {
     white-space: nowrap;
+    position: relative;
+    display: flex;
+}
+
+.action-part__lang-select {
+    position: relative;
+}
+
+.lang-select__btn-open {
+    margin: 4px 0 4px 4px;
+    border: var(--lang-btn--border);
+    border-radius: var(--lang-btn--border-radius);
+    background: var(--lang-btn--background);
+    width: var(--lang-btn--width);
+    padding: var(--lang-btn--padding);
+    text-transform: var(--lang-btn--text-transform);
 }
 
 .lang-cont__btn {
@@ -47,11 +63,41 @@
     width: var(--lang-btn--width);
     padding: var(--lang-btn--padding);
     text-transform: var(--lang-btn--text-transform);
-}
-
-.lang-cont__btn:not(:first-child) {
     margin: var(--lang-btn--margin);
 }
+
+.lang-cont__btn-hdn {
+    border: var(--lang-btn--border);
+    border-radius: var(--lang-btn--border-radius);
+    background: var(--lang-btn--background);
+    width: var(--lang-btn--width);
+    padding: var(--lang-btn--padding);
+    text-transform: var(--lang-btn--text-transform);
+    margin: var(--lang-btn-hdn-selector--margin);
+}
+
+.lang-cont__btn--select {
+    order: 1;
+    margin-right: 0;
+    /*display: flex;*/
+    /*flex-direction: column;*/
+}
+
+.lang-cont__hidden-list {
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    transition: height 0.1s;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/*.lang-cont__btn:not(:first-child) {*/
+/*    margin: var(--lang-btn--margin);*/
+/*}*/
 
 .btn__icon {
     width: 12px;

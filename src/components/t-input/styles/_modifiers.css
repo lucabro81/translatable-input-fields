@@ -26,7 +26,8 @@
     align-items: flex-end;
 }
 
-.lang-cont__btn.lang-cont__btn--selected {
+.lang-cont__btn.lang-cont__btn--selected,
+.lang-cont__btn-hdn.lang-cont__btn--selected {
     background: var(--lang-btn--selected--background);
     color: var(--lang-btn--selected--color);
 }
@@ -41,4 +42,9 @@
 
 .input-part__field--row-reverse {
     flex-direction: row-reverse;
+}
+
+.lang-cont__hidden-list.lang-cont__hidden-list--hide {
+    height: 0!important;
+    transition: height 0.1s;
 }
