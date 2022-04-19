@@ -9,20 +9,21 @@
 			<div class='input-part__field' id='input-part'>
 				<input type='text' />
 				<div class='container__action-part' id='action-part-row'>
-					<div class='action-part__lang-cont' id='lang-list-row'></div>
+
+					<div class='action-part__lang-cont' id='lang-list-row'>
+						<div class='lang-cont__btn--select'>
+							<button class='lang-cont__btn-hdn ' id='btn-select-hidden-lang-row'>...</button>
+							<ul class='lang-cont__hidden-list lang-cont__hidden-list--hide' id='hidden-lang-list-row'>
+							</ul>
+						</div>
+					</div>
+
 				</div>
 			</div>
-
 		</label>
 
-		<style>
-
-        .show {
-            height: 200px;
-            transition: height 0.5s;
-        }
-		</style>
 		<div class='container__action-part' id='action-part'>
+
 			<div class='action-part__lang-cont' id='lang-list'>
 				<div class='lang-cont__btn--select'>
 					<button class='lang-cont__btn-hdn ' id='btn-select-hidden-lang'>...</button>
@@ -30,6 +31,7 @@
 					</ul>
 				</div>
 			</div>
+
 		</div>
 
 	</div>

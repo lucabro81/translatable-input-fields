@@ -1,6 +1,6 @@
  - *FATTO* - fare btn-position (top|left, top|right, bottom|left, bottom|right, left|inset, left|outset, right|inset, right|outset)
- - fare listedLang
-    - calcolare l'altezza giusta per il contentinore delle lingue nascoste
+ - *FATTO* - fare listedLang
+    - *FATTO* - calcolare l'altezza giusta per il contentinore delle lingue nascoste
  - fare placeholder
  - valutare se usare uno slot per il campo di input
  - vedere cos asuccedere su il web component estende HTMLInputElement

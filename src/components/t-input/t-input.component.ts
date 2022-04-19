@@ -134,17 +134,20 @@ export class TInput implements IWebComponent {
       this.inputField?.addEventListener("input", this.onInput as EventListener);
 
       const isInset = this._langBtnPositionString.split("|")?.[1] === "inset";
+
       if (isInset) {
         this.inputPart?.classList.add(...this._positionClasses);
       }
       this.actionPart = this.$el?.querySelector(isInset ? "#action-part-row" : "#action-part");
       this.langList = this.$el?.querySelector(isInset ? "#lang-list-row" : "#lang-list");
+      this.$el?.querySelector(!isInset ? "#action-part-row" : "#action-part")?.remove();
+      this.$el?.querySelector(!isInset ? "#lang-list-row" : "#lang-list")?.remove();
 
-      if (this.listedLang.some((lang: Record<string, boolean>) => lang[Object.keys(lang)[0]])) {
-        this.selectHiddenBtn = this.$el?.querySelector("#btn-select-hidden-lang");
+      // if (this.listedLang.some((lang: Record<string, boolean>) => lang[Object.keys(lang)[0]])) {
+        this.selectHiddenBtn = this.$el?.querySelector(isInset ? "#btn-select-hidden-lang-row" : "#btn-select-hidden-lang");
+        this.hiddenLangListCont = this.$el?.querySelector(isInset ? "#hidden-lang-list-row" : "#hidden-lang-list");
         this.selectHiddenBtn?.addEventListener("click", this.onShowHiddenLang as EventListener);
-        this.hiddenLangListCont = this.$el?.querySelector("#hidden-lang-list");
-      }
+      // }
 
       const selectHiddenBtnHHeight = (this.selectHiddenBtn?.offsetParent as HTMLElement)?.offsetHeight || 0;
       let heightMultiplier = 0;
@@ -155,7 +158,6 @@ export class TInput implements IWebComponent {
         langBtn.innerText = key;
         if (lang[key]) {
           langBtn.classList.add(CSSClasses.BTN_LANG);
-          (key === this.currLang) && langBtn.classList.add(CSSClasses.BTN_LANG_SELECTED);
           langBtn.addEventListener("click", this.onBtnLang);
           this.langList?.appendChild(langBtn);
         }
@@ -167,9 +169,14 @@ export class TInput implements IWebComponent {
             const listElem = document.createElement("li");
             listElem.appendChild(langBtn)
             this.hiddenLangListCont.appendChild(listElem);
+            if (this.selectHiddenBtn) {
+              this.selectHiddenBtn.classList.add(CSSClasses.BTN_LANG_SELECTED);
+              this.selectHiddenBtn.innerText = this.currLang;
+            }
             heightMultiplier++;
           }
         }
+        (key === this.currLang) && langBtn.classList.add(CSSClasses.BTN_LANG_SELECTED);
       });
 
       if (this.hiddenLangListCont) {
