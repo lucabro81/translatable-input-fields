@@ -8,7 +8,7 @@ interface IModel {[key: string]: string}
 @Component({
   html: html,
   style: style,
-  properties: ["model", "defaultLang", "listedLang"]
+  properties: ["model", "defaultLang", "listedLang", "placeholder"]
 })
 export class TInput implements IWebComponent {
 
@@ -23,15 +23,23 @@ export class TInput implements IWebComponent {
 
   private isValueChangedInternally: boolean = false;
   private currLang: string = "";
-  private langArr: Array<string> = [];
 
   private _defaultLang: string = "";
+  private _placeholder: string = "";
   private _model: IModel = {} as IModel;
   private _positionClasses: Array<string> =
     [CSSClasses.BTN_LANG_POSITION_BOTTOM, CSSClasses.BTN_LANG_POSITION_ALIGN_RIGHT];
   private _isInset = false;
   private _langBtnPositionString = "";
   private _listedLang: Array<Record<string, boolean>> = [];
+
+  set placeholder(value: string) {
+    this._placeholder = value;
+  }
+
+  get placeholder(): string {
+    return this._placeholder;
+  }
 
   /*********** defaultLang ***********/
 
@@ -194,6 +202,7 @@ export class TInput implements IWebComponent {
       }
 
       this.inputField.value = this.model[this.currLang];
+      this.inputField.placeholder = this._placeholder;
 
     })
   }

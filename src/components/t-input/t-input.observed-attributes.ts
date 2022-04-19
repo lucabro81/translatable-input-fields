@@ -1,2 +1,2 @@
-const observedAttributes: Array<string> = ["default-lang", "btn-position"];
+const observedAttributes: Array<string> = ["default-lang", "btn-position", "placeholder"];
 export default observedAttributes;
