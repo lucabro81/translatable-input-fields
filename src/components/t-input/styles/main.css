@@ -74,19 +74,20 @@
     padding: var(--lang-btn--padding);
     text-transform: var(--lang-btn--text-transform);
     margin: var(--lang-btn-hdn-selector--margin);
+    z-index: 1;
+    position: relative;
 }
 
 .lang-cont__btn--select {
     order: 1;
     margin-right: 0;
-    /*display: flex;*/
-    /*flex-direction: column;*/
 }
 
 .lang-cont__hidden-list {
     overflow: hidden;
     position: absolute;
     right: 0;
+    top: 0;
     transition: height 0.1s;
     display: flex;
     flex-direction: column;
@@ -94,10 +95,6 @@
     padding: 0;
     list-style: none;
 }
-
-/*.lang-cont__btn:not(:first-child) {*/
-/*    margin: var(--lang-btn--margin);*/
-/*}*/
 
 .btn__icon {
     width: 12px;

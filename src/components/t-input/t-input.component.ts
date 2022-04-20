@@ -151,11 +151,9 @@ export class TInput implements IWebComponent {
       this.$el?.querySelector(!isInset ? "#action-part-row" : "#action-part")?.remove();
       this.$el?.querySelector(!isInset ? "#lang-list-row" : "#lang-list")?.remove();
 
-      // if (this.listedLang.some((lang: Record<string, boolean>) => lang[Object.keys(lang)[0]])) {
-        this.selectHiddenBtn = this.$el?.querySelector(isInset ? "#btn-select-hidden-lang-row" : "#btn-select-hidden-lang");
-        this.hiddenLangListCont = this.$el?.querySelector(isInset ? "#hidden-lang-list-row" : "#hidden-lang-list");
-        this.selectHiddenBtn?.addEventListener("click", this.onShowHiddenLang as EventListener);
-      // }
+      this.selectHiddenBtn = this.$el?.querySelector(isInset ? "#btn-select-hidden-lang-row" : "#btn-select-hidden-lang");
+      this.hiddenLangListCont = this.$el?.querySelector(isInset ? "#hidden-lang-list-row" : "#hidden-lang-list");
+      this.selectHiddenBtn?.addEventListener("click", this.onShowHiddenLang as EventListener);
 
       const selectHiddenBtnHHeight = (this.selectHiddenBtn?.offsetParent as HTMLElement)?.offsetHeight || 0;
       let heightMultiplier = 0;
@@ -188,6 +186,7 @@ export class TInput implements IWebComponent {
       });
 
       if (this.hiddenLangListCont) {
+        this.hiddenLangListCont.style.paddingTop = selectHiddenBtnHHeight+'px';
         this.hiddenLangListCont.style.height = (selectHiddenBtnHHeight*heightMultiplier)+'px';
       }
 

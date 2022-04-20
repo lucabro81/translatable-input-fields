@@ -39,6 +39,12 @@
 	inputEl1.addEventListener('input', (value) => {
 		console.log('input', value);
 	});
+	inputEl1.addEventListener('focus', () => {
+		console.log('focus');
+	});
+	inputEl1.addEventListener('blur', () => {
+		console.log('blur');
+	});
 </script>
 </body>
 </html>
