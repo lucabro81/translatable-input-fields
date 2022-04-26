@@ -17,7 +17,7 @@
     "build:prod:patch": "npm run _bump-patch && npm run build:prod",
     "build:prod:minor": "npm run _bump-minor && npm run build:prod",
     "build:prod:major": "npm run _bump-major && npm run build:prod",
-    "build:npm": "npm run _clean-package && npm run _tsc && npm run _move-definition-types",
+    "build:npm": "npm run _clean-package && npm run _tsc && npm run _copy-definition-types && npm run _copy-css-html",
     "publish:npm:patch": "npm run _bump-patch && npm run build:npm npm login && npm publish",
     "publish:npm:minor": "npm run _bump-minor && npm run build:npm npm login && npm publish",
     "publish:npm:major": "npm run _bump-major && npm run build:npm npm login && npm publish",
@@ -30,7 +30,8 @@
     "_bump-minor": "npm version minor",
     "_bump-major": "npm version major",
     "_clean-package": "rm -rf package && mkdir package",
-    "_move-definition-types": "./scripts/moveDefinitionTypes.js"
+    "_copy-definition-types": "./scripts/copyDefinitionTypes.js",
+    "_copy-css-html": "./scripts/copyCssHtml.js"
   },
   "husky": {
     "hooks": {
