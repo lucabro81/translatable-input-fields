@@ -186,7 +186,7 @@ export class TInput implements IWebComponent {
       });
 
       if (this.hiddenLangListCont) {
-        this.hiddenLangListCont.style.paddingTop = selectHiddenBtnHHeight+'px';
+        this.hiddenLangListCont.style.padding = `${selectHiddenBtnHHeight}px 2px 0 2px`;
         this.hiddenLangListCont.style.height = (selectHiddenBtnHHeight*heightMultiplier)+'px';
       }
 

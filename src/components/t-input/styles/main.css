@@ -86,14 +86,20 @@
 .lang-cont__hidden-list {
     overflow: hidden;
     position: absolute;
-    right: 0;
-    top: 0;
-    transition: height 0.1s;
+    right: var(--lang-dropdown--right);
+    top: var(--lang-dropdown--top);
+    background: rgba(var(--lang-dropdown--background-color), var(--lang-dropdown--background-opacity));
+    transition: var(--lang-dropdown--transition);
     display: flex;
     flex-direction: column;
-    margin: 0;
-    padding: 0;
+    margin: var(--lang-dropdown--margin);
+    padding: var(--lang-dropdown--padding);
     list-style: none;
+
+    -webkit-box-shadow: var(--lang-dropdown--shadow);
+    -moz-box-shadow: var(--lang-dropdown--shadow);
+    -o-box-shadow: var(--lang-dropdown--shadow);
+    box-shadow: var(--lang-dropdown--shadow);
 }
 
 .btn__icon {

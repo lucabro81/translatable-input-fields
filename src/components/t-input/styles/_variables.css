@@ -28,4 +28,16 @@
 
     --lang-btn-group--spacer--left: 4px;
     --lang-btn-group--spacer--right: 4px;
+
+    /*--------------------------------------*/
+
+    --lang-dropdown--right: -2px;
+    --lang-dropdown--top: -2px;
+    --lang-dropdown--background-color: 255, 255, 255;
+    --lang-dropdown--background-opacity: 1;
+    --lang-dropdown--background: rgba(123,111,222, 1);
+    --lang-dropdown--transition: all 0.2s;
+    --lang-dropdown--margin: 0;
+    --lang-dropdown--padding: 0;
+    --lang-dropdown--shadow: 1px 1px 6px 0 rgba(0,0,0,0.2);
 }
