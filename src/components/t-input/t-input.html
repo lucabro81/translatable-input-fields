@@ -3,7 +3,8 @@
 
 		<label class='container__input-part' id='input-label'>
 			<div class='input-part__field' id='input-part'>
-				<input type='text' />
+				<slot name='input'></slot>
+				<input type='text' id='input-field'/>
 				<div class='container__action-part' id='action-part-row'>
 
 					<div class='action-part__lang-cont' id='lang-list-row'>

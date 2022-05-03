@@ -137,7 +137,15 @@ export class TInput implements IWebComponent {
       this.container = this.$el?.querySelector('#container');
       this.inputLabel = this.$el?.querySelector("#input-label");
       this.inputPart = this.$el?.querySelector("#input-part");
-      this.inputField = this.inputLabel?.getElementsByTagName(Tags.INPUT_TAG)[0] as HTMLInputElement;
+      const slottedInput: HTMLInputElement = this.inputPart?.querySelector('slot')?.assignedNodes()[0] as HTMLInputElement;
+      console.log("this.inputField", this.inputPart?.querySelector('slot')?.assignedNodes());
+      if (slottedInput) {
+        this.$el?.querySelector("#input-field")?.remove();
+        this.inputField = slottedInput;
+      }
+      else {
+        this.inputField = this.$el?.querySelector("#input-field");
+      }
 
       this.inputField?.addEventListener("input", this.onInput as EventListener);
 
@@ -200,8 +208,10 @@ export class TInput implements IWebComponent {
         this.actionPart?.classList.add(CSSClasses.BTN_LANG_SPACER_RIGHT);
       }
 
-      this.inputField.value = this.model[this.currLang];
-      this.inputField.placeholder = this._placeholder;
+      if (this.inputField) {
+        this.inputField.value = this.model[this.currLang];
+        this.inputField.placeholder = this._placeholder;
+      }
 
     })
   }
